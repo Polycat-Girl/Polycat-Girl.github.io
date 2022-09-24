@@ -12,8 +12,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:hover, a:active, a:visited {
-  color: #0A0A0A;
-  text-decoration: underline;
+  color: #634D62;
+  text-decoration: none;
 }
 
 .hide {
@@ -27,12 +27,20 @@ a, a:hover, a:active, a:visited {
   padding-right: 10px;
 }
 
+.bg-primary {
+  background-color: #FFBDF8 !important;
+}
+
+.bg-secondary {
+  background-color: #634D62 !important;
+}
+
 .text-primary {
-  color: #1062EE !important;
+  color: #FFBDF8 !important;
 }
 
 .text-secondary {
-  color: #F9AF00 !important;
+  color: #634D62 !important;
 }
 
 .text-success {
@@ -112,30 +120,30 @@ a, a:hover, a:active, a:visited {
 .btn-solid.btn-primary:hover, 
 .btn-solid.btn-primary:active, 
 .btn-solid.btn-primary:visited {
-  background-color: #1062EE;
+  background-color: #FFBDF8;
 }
 
 .btn-outline.btn-primary, 
 .btn-outline.btn-primary:hover, 
 .btn-outline.btn-primary:active, 
 .btn-outline.btn-primary:visited {
-  border-color: #1062EE;
-  color: #1062EE;
+  border-color: #FFBDF8;
+  color: #FFBDF8;
 }
 
 .btn-solid.btn-secondary, 
 .btn-solid.btn-secondary:hover, 
 .btn-solid.btn-secondary:active, 
 .btn-solid.btn-secondary:visited {
-  background-color: #F9AF00;
+  background-color: #634D62;
 }
 
 .btn-outline.btn-secondary, 
 .btn-outline.btn-secondary:hover, 
 .btn-outline.btn-secondary:active, 
 .btn-outline.btn-secondary:visited {
-  border-color: #F9AF00;
-  color: #F9AF00;
+  border-color: #634D62;
+  color: #634D62;
 }
 
 .form-control {
@@ -225,22 +233,22 @@ a, a:hover, a:active, a:visited {
   content: "\f05a";
 }
 .alert-solid.alert-primary {
-  background-color: #1062EE;
+  background-color: #FFBDF8;
 }
 .alert-outline.alert-primary {
-  border-color: #1062EE;
-  color: #1062EE;
+  border-color: #FFBDF8;
+  color: #FFBDF8;
 }
 
 .alert-secondary::before {
   content: "\f05a";
 }
 .alert-solid.alert-secondary {
-  background-color: #F9AF00;
+  background-color: #634D62;
 }
 .alert-outline.alert-secondary {
-  border-color: #F9AF00;
-  color: #F9AF00;
+  border-color: #634D62;
+  color: #634D62;
 }
 
 .alert-info::before {
@@ -355,42 +363,27 @@ a, a:hover, a:active, a:visited {
   text-transform: uppercase;
 }
 
-.head .left .logo img {
-  height: 30px;
-}
-
-.head .left {
+.head .logo {
+  align-items: center;
+  display: flex;
   flex-grow: 1;
 }
 
-.head .right {
+.head .logo img {
+  height: 30px;
+}
+
+.head .menu {
   align-items: center;
   display: flex;
 }
 
-.head .right .link {
+.head .menu a {
   margin-right: 20px;
 }
 
-.head .right .link.btn {
+.head .menu .btn {
   margin-right: 10px;
-}
-
-.head .right .social {
-  align-items: center;
-  display: flex;
-}
-
-.head .right .social .link {
-  margin-left: 10px;
-  margin-right: 0;
-  font-size: 25px;
-}
-
-.head .right .social img {
-  height: 40px;
-  position: relative;
-  top: 4px;
 }
 
 .body h1 {
@@ -405,47 +398,29 @@ a, a:hover, a:active, a:visited {
 }
 
 .foot {
-  background-color: #FCFCFC;
-  border-top: 1px solid #CCCCCC;
   padding: 40px 0;
+  text-align: center;
 }
 
-.foot .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-} 
-
-.foot .left img {
-  max-width: 200px;
-  width: 100%;
+.foot h3 {
+  font-family: 'Lemon/Milk light', sans-serif;
+  font-size: 18px;
+  margin-top: 0;
 }
 
-.foot nav {
-  padding: 10px 30px;
+.foot .social img {
+  display: inline-block;
+  margin: 0 10px;
+  width: 30px;
 }
 
-.foot nav a {
-  display: block;
-  line-height: 40px;
-  text-decoration: none;
+.foot hr {
+  margin-top: 20px;
 }
 
-#preload {
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.65);
-  bottom: 0;
-  color: #FFFFFF;
-  display: flex;
-  font-size: 100px;
-  left: 0;
-  justify-content: center;
-  overflow: auto;
-  padding: 0 20px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 2000;
+.foot .masthead {
+  font-size: 12px;
+  padding: 20px 0 0;
 }
 
 @media(max-width: 767px) {
@@ -453,38 +428,24 @@ a, a:hover, a:active, a:visited {
     display: block;
   }
 
-  .head .left {
-    text-align: center;
+  .head .logo {
+    justify-content: center;
     margin-bottom: 10px;
+    text-align: center;
   }
 
-  .head .right {
+  .head .menu {
     display: block;
     text-align: center;
   }
 
-  .head .right .link {
+  .head .menu a {
     margin: 5px;
   }
 
-  .head .right .link.btn {
+  .head .menu .btn {
     display: block;
     margin: 10px auto 0;
     max-width: 300px;
-  }
-
-  .head .right .social {
-    justify-content: center;
-  }
-
-  .head .right .social .link {
-    margin: 0;
-  }
-}
-
-@media(max-width: 570px) {
-  .foot .container {
-    display: block;
-    text-align: center;
   }
 }

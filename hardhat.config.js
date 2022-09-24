@@ -31,39 +31,25 @@ module.exports = {
         interval: 5000
       }
     },
-    mumbai: {
-      url: "https://matic-mumbai.chainstacklabs.com",
-      chainId: 80001,
-      scanner: 'https://mumbai.polygonscan.com',
-      opensea: 'https://opensea.io',
-      signer: '0x48Ab2593a360d9f90cB53f9A63FD0CCBcAF0e887',
-      accounts: [process.env.BLOCKCHAIN_MUMBAI_PRIVATE_KEY],
-      contracts: { 
-        usdc: '0x8F54a342Fb4327C8D85Ea86A9322713eA80E040c',
-        nft: '0xb416c77F0728EEe9089DdfCc6CCB4b9Cb2575294',
-        metadata: '0xfa08Ad07929b9F21DF3050135a0c6590885471e5',
-        sale: '0x6dE9c79560b0E449E1b3D4C2445Bd416A869731E',
-        index: '0x997AD53E22a1b1fC3E519dd6709D9701447B0E2A',
-        store: '0xF3Ff0a21bB57B445f41B2242A9D1fCB66c491D2f'
-      }
+    rinkeby: {
+      url: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+      chainId: 4,
+      scanner: 'https://rinkeby.etherscan.io',
+      opensea: 'https://testnets.opensea.io',
+      accounts: [process.env.BLOCKCHAIN_RINKEBY_PRIVATE_KEY],
+      contracts: {}
     },
-    polygon: {
-      url: "https://polygon-rpc.com",
-      chainId: 137,
-      scanner: 'https://polygonscan.com',
+    ethereum: {
+      url: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+      chainId: 1,
+      scanner: 'https://etherscan.io',
       opensea: 'https://opensea.io',
-      signer: '0x48Ab2593a360d9f90cB53f9A63FD0CCBcAF0e887', 
-      accounts: [process.env.BLOCKCHAIN_POLYGON_PRIVATE_KEY],
-      contracts: {
-        usdc: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-        nft: '0xdE2269159b74E49b3C14E16BE59F49C404Bb642F',
-        metadata: '0xc7F0c5fE8E013C1E0d9137814EE9C8fE11A831Dc',
-        sale: '0x3578888c7bC7D10deFC550400dadB0E1B406A522',
-        index: '0xA39eaD14E85E706ac63B2DB1f7a46e0036530cA6',
-        store: '0x8d67b4CEA2756FCb9B7b64513762065B89281707',
-        splitter: '0x7C1B2d95fe7dcD00cf8e6248ee6093B38C5e6B70'
-      }
-    }
+      accounts: [
+        process.env.BLOCKCHAIN_ETHEREUM_PRIVATE_KEY, 
+        process.env.BLOCKCHAIN_RINKEBY_PRIVATE_KEY
+      ],
+      contracts: {}
+    },
   },
   solidity: {
     version: '0.8.9',
@@ -86,7 +72,7 @@ module.exports = {
   gasReporter: {
     currency: 'USD',
     coinmarketcap: process.env.BLOCKCHAIN_CMC_KEY,
-    gasPrice: 20
+    gasPrice: 50
   },
   etherscan: {
     // Your API key for Etherscan

@@ -31,25 +31,24 @@ module.exports = {
         interval: 5000
       }
     },
-    rinkeby: {
-      url: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-      chainId: 4,
-      scanner: 'https://rinkeby.etherscan.io',
-      opensea: 'https://testnets.opensea.io',
-      accounts: [process.env.BLOCKCHAIN_RINKEBY_PRIVATE_KEY],
-      contracts: {}
-    },
-    ethereum: {
-      url: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-      chainId: 1,
-      scanner: 'https://etherscan.io',
+    mumbai: {
+      url: "https://matic-mumbai.chainstacklabs.com",
+      chainId: 80001,
+      scanner: 'https://mumbai.polygonscan.com',
       opensea: 'https://opensea.io',
-      accounts: [
-        process.env.BLOCKCHAIN_ETHEREUM_PRIVATE_KEY, 
-        process.env.BLOCKCHAIN_RINKEBY_PRIVATE_KEY
-      ],
+      signer: '0x48Ab2593a360d9f90cB53f9A63FD0CCBcAF0e887',
+      accounts: [process.env.BLOCKCHAIN_MUMBAI_PRIVATE_KEY],
       contracts: {}
     },
+    polygon: {
+      url: "https://polygon-rpc.com",
+      chainId: 137,
+      scanner: 'https://polygonscan.com',
+      opensea: 'https://opensea.io',
+      signer: '0x48Ab2593a360d9f90cB53f9A63FD0CCBcAF0e887', 
+      accounts: [process.env.BLOCKCHAIN_POLYGON_PRIVATE_KEY],
+      contracts: {}
+    }
   },
   solidity: {
     version: '0.8.9',

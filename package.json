@@ -13,6 +13,7 @@
     "dotenv": "14.2.0",
     "chai": "4.3.4",
     "ethereum-waffle": "3.4.0",
+    "erc721b": "0.2.1",
     "ethers": "5.4.1",
     "express": "4.17.1",
     "hardhat": "2.4.3",

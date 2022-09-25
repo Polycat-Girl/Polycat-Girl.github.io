@@ -38,7 +38,9 @@ module.exports = {
       opensea: 'https://opensea.io',
       signer: '0x48Ab2593a360d9f90cB53f9A63FD0CCBcAF0e887',
       accounts: [process.env.BLOCKCHAIN_MUMBAI_PRIVATE_KEY],
-      contracts: {}
+      contracts: {
+        nft: '0x8DcEDa29112D216DB500974EBA35C0262ec1cAc8'
+      }
     },
     polygon: {
       url: "https://polygon-rpc.com",

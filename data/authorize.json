@@ -1,0 +1,13 @@
+{
+  "genesis": [
+    ["0x65Ee9a95C5B91B84B7040fAc264e782448e38a46", 1]
+  ],
+  "stacked": [
+    ["0x8995451764c8867ad34e47a56e96fEbB8297b1B0", 5],
+    ["0x65Ee9a95C5B91B84B7040fAc264e782448e38a46", 5]
+  ],
+  "whitelist": [
+    ["0xD7D190cdC6A7053CD5Ee76E966a1b9056dbA4774", 10],
+    ["0x65Ee9a95C5B91B84B7040fAc264e782448e38a46", 10]
+  ]
+}

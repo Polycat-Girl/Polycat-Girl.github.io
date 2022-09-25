@@ -1,4 +1,4 @@
-.section-1 {
+.body {
   background-image: url(/images/banner-sneak.png);
   background-position: center 0;
   background-size: auto 560px;
@@ -6,39 +6,43 @@
   text-align: center;
 }
 
-.section-1 img {
-  display: block;
-  width: 100%;
-}
-
-.section-1 .container {
+.body .container {
   max-width: none;
   overflow: hidden;
   padding: 170px 0;
 }
 
-
-.section-1 h4 {
-  margin: 10px 0 0;
+.body .disconnected {
+  padding: 48px 0;
 }
 
-.section-1 p {
-  padding-top: 0;
+.body p {
+  padding: 0 0 10px;
   margin: auto;
   max-width: 450px;
 }
 
-.section-1 .form-row {
+.body .tabs .btn {
+  margin: 2px;
+  text-align: center;
+  width: 150px;
+}
+
+.body .content h4 {
+  margin: 10px 0 0;
+}
+
+.body .content .form-row {
   align-items: center;
   display: flex;
   justify-content: center;
 }
 
-.section-1 .form-row .btn {
+.body .content .form-row .btn {
   padding: 15px 40px;
 }
 
-.section-1 .form-row .btn[type=button] {
+.body .content .form-row .btn[type=button] {
   border-radius: 50%;
   font-weight: bold;
   height: 40px;
@@ -46,7 +50,7 @@
   width: 40px;
 }
 
-.section-1 .form-row #amount {
+.body .content .form-row input.amount {
   border: 0;
   display: inline-block;
   font-size: 20px;
@@ -56,7 +60,7 @@
 }
 
 @media(max-width: 439px) {
-  .section-1 .container {
+  .body .container {
     padding: 160px 20px;
   }
 }

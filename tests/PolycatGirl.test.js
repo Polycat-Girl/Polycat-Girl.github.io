@@ -4,7 +4,7 @@ function freeMint(recipient, quantity) {
   return Buffer.from(
     ethers.utils.solidityKeccak256(
       ['string', 'address', 'uint256'],
-      ['mint', recipient, quantity]
+      ['freemint', recipient, quantity]
     ).slice(2),
     'hex'
   )
@@ -14,7 +14,7 @@ function whitelistMint(recipient, price) {
   return Buffer.from(
     ethers.utils.solidityKeccak256(
       ['string', 'address', 'uint256'],
-      ['mint', recipient, price]
+      ['wlmint', recipient, price]
     ).slice(2),
     'hex'
   )
@@ -24,7 +24,7 @@ function publicMint(price) {
   return Buffer.from(
     ethers.utils.solidityKeccak256(
       ['string', 'uint256'],
-      ['mint', price]
+      ['publicmint', price]
     ).slice(2),
     'hex'
   )

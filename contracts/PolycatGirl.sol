@@ -110,7 +110,7 @@ contract PolycatGirl is
       //or if the admin did not approve of the price
       || !hasRole(_MINTER_ROLE, ECDSA.recover(
         ECDSA.toEthSignedMessageHash(
-          keccak256(abi.encodePacked("mint", recipient, quantity))
+          keccak256(abi.encodePacked("freemint", recipient, quantity))
         ),
         proof
       ))
@@ -134,7 +134,7 @@ contract PolycatGirl is
       //or if the admin did not approve of the price
       || !hasRole(_MINTER_ROLE, ECDSA.recover(
         ECDSA.toEthSignedMessageHash(
-          keccak256(abi.encodePacked("mint", price))
+          keccak256(abi.encodePacked("publicmint", price))
         ),
         proof
       ))
@@ -160,7 +160,7 @@ contract PolycatGirl is
       //or if the admin did not approve of the price
       || !hasRole(_MINTER_ROLE, ECDSA.recover(
         ECDSA.toEthSignedMessageHash(
-          keccak256(abi.encodePacked("mint", recipient, price))
+          keccak256(abi.encodePacked("wlmint", recipient, price))
         ),
         proof
       ))

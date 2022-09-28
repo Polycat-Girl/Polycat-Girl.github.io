@@ -29,8 +29,8 @@
     <link href="http://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-    <link rel="stylesheet" type="text/css" href="/styles/theme.css?v1" />
-    <link rel="stylesheet" type="text/css" href="/styles/mint.css?v1" />
+    <link rel="stylesheet" type="text/css" href="/styles/theme.css?v2" />
+    <link rel="stylesheet" type="text/css" href="/styles/mint.css?v2" />
   </head>
   <body>
     <header class="head">
@@ -96,12 +96,39 @@
     </footer>
     <template id="template-tab">
       <a 
-        class="btn btn-solid btn-primary"
+        class="btn btn-solid btn-{COLOR}"
         data-do="tab"
         data-on="click"
         data-mode="{MODE}"
         href="javascript:void(0)" 
       >{LABEL} Mint</a>
+    </template>
+    <template id="template-countdown">
+      <div 
+        class="countdown" 
+        data-do="countdown"
+        data-date="{DATE}" 
+        data-zone="user_timezone" 
+        data-user_timezone="Asia/Manila" 
+        data-account_timezone="Asia/Hong_Kong"
+      > 
+        <div class="countdown-item"> 
+          <span class="days">00</span> 
+          <small>Days</small> 
+        </div> 
+        <div class="countdown-item"> 
+          <span class="hours">00</span> 
+          <small>Hours</small> 
+        </div> 
+        <div class="countdown-item"> 
+          <span class="minutes">00</span> 
+          <small>Mins</small> 
+        </div> 
+        <div class="countdown-item"> 
+          <span class="seconds">00</span> 
+          <small>Secs</small> 
+        </div> 
+      </div>
     </template>
     <template id="template-mint-genesis">
       <div class="form">
@@ -206,7 +233,7 @@
     <script type="text/javascript" src="/scripts/lib/walletconnect.js"></script>
     <script type="text/javascript" src="/scripts/lib/fortmatic.js"></script>
     <script type="text/javascript" src="/scripts/lib/notify.js"></script>
-    <script type="text/javascript" src="/scripts/mint.js?v1"></script>
+    <script type="text/javascript" src="/scripts/mint.js?v2"></script>
     <script type="text/javascript" src="/scripts/connect.js?v1"></script>
   </body>
 </html>

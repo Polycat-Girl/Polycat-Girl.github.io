@@ -59,6 +59,30 @@
   width: 40px;
 }
 
+.body .content .alert {
+  margin: auto;
+  max-width: 400px;
+}
+
+.countdown {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.countdown .countdown-item {
+  padding: 15px 25px;
+  margin: 5px;
+}
+
+.countdown .countdown-item span {
+  font-size: 40px;
+}
+
+.countdown .countdown-item small {
+  display: block;
+}
+
 @media(max-width: 439px) {
   .body .container {
     padding: 160px 20px;

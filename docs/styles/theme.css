@@ -146,6 +146,22 @@ a, a:hover, a:active, a:visited {
   color: #634D62;
 }
 
+.btn-solid.btn-muted, 
+.btn-solid.btn-muted:hover, 
+.btn-solid.btn-muted:active, 
+.btn-solid.btn-muted:visited {
+  background-color: #CCCCCC;
+  color: #999999;
+}
+
+.btn-outline.btn-muted, 
+.btn-outline.btn-muted:hover, 
+.btn-outline.btn-muted:active, 
+.btn-outline.btn-muted:visited {
+  border-color: #CCCCCC;
+  color: #999999;
+}
+
 .form-control {
   box-sizing: border-box;
   width: 100%;

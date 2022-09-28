@@ -19,24 +19,25 @@ window.addEventListener('web3sdk-ready', async () => {
     //  modes: [ 'genesis', 'stacked', 'whitelist', 'public' ]
     //},
     {
-      start: 1664380800000, //Sep 29 00:00:00
-      end: 1664467199000, //Sep 29 23:59:59
+      start: 1664456400000, //Sep 29 21:00:00
+      end: 1664542799000, //Sep 30 20:59:59
       modes: [ 'genesis', 'stacked' ]
     },
     {
-      start: 1664467200000, //Sep 30 00:00:00
-      end: 1664553599000, //Sep 30 23:59:59
+      start: 1664542800000, //Sep 30 21:00:00
+      end: 1664629199000, //Oct 1 20:59:59
       modes: [ 'whitelist' ]
     },
     {
-      start: 1664553600000, //Oct 1 00:00:00
-      end: 1664639999000, //Oct 1 23:59:59
+      start: 1664629200000, //Oct 1 21:00:00
+      end: 1664715599000, //Oct 2 20:59:59
       modes: [ 'public' ]
     }
   ]
 
   const template = {
     tab: document.getElementById('template-tab').innerHTML,
+    countdown: document.getElementById('template-countdown').innerHTML,
     genesis: document.getElementById('template-mint-genesis').innerHTML,
     stacked: document.getElementById('template-mint-stacked').innerHTML,
     whitelist: document.getElementById('template-mint-whitelist').innerHTML,
@@ -52,55 +53,47 @@ window.addEventListener('web3sdk-ready', async () => {
   //------------------------------------------------------------------//
   // Functions
 
-  const stage = _ => {
+  const getStage = mode => {
     const now = Date.now()
     for (const stage of stages) {
-      if (stage.start <= now && now <= stage.end) {
-        return stage.modes
+      if (!mode && stage.start <= now && now <= stage.end) {
+        return stage
+      } else if (mode && stage.modes.indexOf(mode) !== -1) {
+        return stage
       }
     }
 
-    return []
+    return { start: 0, end: 0, modes: [] }
   }
 
   const setAuthorized = async _ => {
-    Web3SDK.state.authorized = {}
+    Web3SDK.state.authorized = { public: publicData }
     try {
       //get authorized chunk
       const key = Web3SDK.state.account.substring(10, 12).toLowerCase()
       const response = await fetch(`/data/authorized/${key}.json`)
       //set authorized state
       const json = await response.json()
-      Web3SDK.state.authorized = json[Web3SDK.state.account.toLowerCase()] || {}
+      Web3SDK.state.authorized = Object.assign({}, 
+        json[Web3SDK.state.account.toLowerCase()] || {}, 
+        Web3SDK.state.authorized
+      )
     } catch(e) {}
-    const modes = stage()
-    //if public is a mode
-    if (modes.indexOf('public') !== -1) {
-      Web3SDK.state.authorized.public = publicData
-    }
+    const stage = getStage()
 
     return Web3SDK.state.authorized
   }
 
   const setTabs = async _ => {
-    const account = Web3SDK.state.account
-    const modes = stage()
     const authorized = await setAuthorized()
-    //if nothing is authorized or no available modes
-    if (!Object.keys(authorized).length || !modes.length) {
-      theme.hide('.connected', true)
-      theme.hide('.disconnected', false)
-      return notify('error', `${account} is not allowed to mint`)
-    }
     
     //reset tabs
     tabs.innerHTML = ''
     //for each mode in authorized account
-    for (const mode of Object.keys(authorized)) {
-      //if mode isn't in modes
-      if (modes.indexOf(mode) === -1) continue
+    for (const mode of ['genesis', 'stacked', 'whitelist', 'public']) {
       const tab = theme.toElement(template.tab, {
         '{MODE}': mode,
+        '{COLOR}': authorized[mode]? 'primary': 'muted',
         '{LABEL}': mode.charAt(0).toUpperCase() + mode.slice(1)
       })
       tabs.append(tab)
@@ -200,19 +193,77 @@ window.addEventListener('web3sdk-ready', async () => {
     //set active mode
     Web3SDK.state.mode = e.for.getAttribute('data-mode')
 
+    //get mode, authorized and account
+    const { mode, authorized, account } = Web3SDK.state
+    //get the active authorization
+    const authorization = authorized[mode]
+    //hide the tabs
     theme.hide(e.for.parentNode, true)
+    //get the info for this stage
+    const stage = getStage(mode)
+    //error if no stage info found (unlikely)
+    if (!stage.modes.length) return notify('error', 'No valid stage found')
+
+    const now = Date.now()
+    if (stage.start > now) {
+      const countdown = theme.toElement(template.countdown, {
+        '{DATE}': stage.start
+      })
+      content.appendChild(countdown)
+      window.doon(countdown)
+
+      //show error if not authorized
+      if (!authorization) {
+        notify('error', `${account} not allowed to mint on this stage`)
+      }
+
+      return
+    }
+
+    //if we are here, it's mint time
+
+    //if they are not authoized to mint
+    if (!authorization) {
+      content.innerHTML = `<div class="alert alert-solid alert-error">${
+        account.substring(0, 4)}...${account.substring(account.length - 4)
+      } not allowed to mint on this stage</div>`
+      return
+    }
+
     
-    const form = theme.toElement(template[Web3SDK.state.mode])
+    const form = theme.toElement(template[mode])
     content.appendChild(form)
     window.doon(form)
 
-    if (Web3SDK.state.mode === 'genesis'
-      && Web3SDK.state.authorized[Web3SDK.state.mode]?.args?.quantity
+    if (mode === 'genesis'
+      && authorization?.args?.quantity
     ) {
       document.querySelector('a.btn-mint').innerHTML = `Mint ${
-        Web3SDK.state.authorized[Web3SDK.state.mode].args.quantity
+        authorization.args.quantity
       }`
     }
+  })
+
+  window.addEventListener('countdown-init', e => {
+    const date = e.for.getAttribute('data-date').replace(/-/g, '/')
+    const days = e.for.querySelector('span.days')
+    const hours = e.for.querySelector('span.hours')
+    const minutes = e.for.querySelector('span.minutes')
+    const seconds = e.for.querySelector('span.seconds')
+    setInterval(function () {
+      let diff = date - Date.now()
+      if (diff < 0) diff = 0
+
+      const diffDays = Math.floor(diff / (1000 * 60 * 60 * 24))
+      const diffHours = Math.floor((diff / (1000 * 60 * 60)) % 24)
+      const diffMinutes = Math.floor((diff / (1000 * 60)) % 60)
+      const diffSeconds = Math.floor((diff / 1000) % 60)
+
+      days.innerText = diffDays < 10 ? '0' + diffDays : diffDays
+      hours.innerText = diffHours < 10 ? '0' + diffHours : diffHours
+      minutes.innerText = diffMinutes < 10 ? '0' + diffMinutes : diffMinutes
+      seconds.innerText = diffSeconds < 10 ? '0' + diffSeconds : diffSeconds
+    }, 1000)
   })
 
   window.addEventListener('decrease-amount-click', _ => {

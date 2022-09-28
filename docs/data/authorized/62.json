@@ -1,0 +1,11 @@
+{
+  "0x9ab4411e6296e3971c719b69b4c46cfb1d9fd116": {
+    "genesis": {
+      "method": "mint(address,uint256,bytes)",
+      "args": {
+        "quantity": 1,
+        "proof": "0xb0303e16288fdf6959a782a60f609468e5d675e83326a7e4dcf61b692bd772f543e50401c67f940e636197cdeb8d61dba6cb6e4f633a4c44134a60012a9ed65d1b"
+      }
+    }
+  }
+}

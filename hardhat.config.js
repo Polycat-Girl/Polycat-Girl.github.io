@@ -49,7 +49,9 @@ module.exports = {
       opensea: 'https://opensea.io',
       signer: '0x48Ab2593a360d9f90cB53f9A63FD0CCBcAF0e887', 
       accounts: [process.env.BLOCKCHAIN_POLYGON_PRIVATE_KEY],
-      contracts: {}
+      contracts: {
+        nft: '0xd581cbaBE1e603838AD1D29cb4df31FdC24ebd2E'
+      }
     }
   },
   solidity: {

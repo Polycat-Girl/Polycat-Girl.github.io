@@ -1,0 +1,27 @@
+{
+  "0xb376fbbceb02646ac81113acb5e521f73a7c57b5": {
+    "stacked": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "5000000000000000000",
+        "proof": "0xe7ad6d9eda75ee11d769775ea1ea1e6732700fda13e1adb02281a6cbb4f8138b0e5df7fdee0cf5ca849fd2d591b713dec92fe516e0e2422c77da2a65fb9e47e11b"
+      }
+    },
+    "whitelist": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "10000000000000000000",
+        "proof": "0x8b0065ceb69fb8f24a650fa47305d1367eea5cc1d6ac552ca7507838d236e0c561a2349a1c4fd29365e77e0a06e95b7b2a33af941153012847a665514b8da7ad1b"
+      }
+    }
+  },
+  "0xa6ebc2efeb78d0110583f70524a244768607f716": {
+    "whitelist": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "10000000000000000000",
+        "proof": "0xcd0e6a6a219c51792d4764d137fb90c603e5e1c84e2c0883e213b31dd5508b26453e73e6873e3b583ac7558fc9ebe5db5da78fc254c01f3f658702c4ee5ec3d31b"
+      }
+    }
+  }
+}

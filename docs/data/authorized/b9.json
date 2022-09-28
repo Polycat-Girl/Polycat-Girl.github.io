@@ -1,0 +1,11 @@
+{
+  "0x57eb67f7b933671498b12f3994daf9019b9e6324": {
+    "stacked": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "5000000000000000000",
+        "proof": "0x5c5e5a40be5859edf516e87132589ecce5366799f7dbf2f7940f691be9c404140ccc8aa93e71bb1f6ba633a9ef996de2cb1321751ce6e57b4b5bd3e1ece8b28a1b"
+      }
+    }
+  }
+}

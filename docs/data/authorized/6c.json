@@ -1,0 +1,20 @@
+{
+  "0xd9b8703b6cf2251253624d024c6e5239398eff44": {
+    "genesis": {
+      "method": "mint(address,uint256,bytes)",
+      "args": {
+        "quantity": 1,
+        "proof": "0x1c365bf57e974dd8999a3ea20b34cde267e716d9c4079b3af852af3498d163bc603148d38b899917b14df003518495c0203104034df9ee797ecf77c5d5cab9871b"
+      }
+    }
+  },
+  "0x16bf2d206c039c6337948929e564454105a83702": {
+    "whitelist": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "10000000000000000000",
+        "proof": "0x17f8b8f5b2fead5b9835a2d9c236260fe89e584cb0ad0c01fe35ce403f1491193a963b842bfd2722bd2f4624e18e2225e4941fdabf4834bee1c5af3f6476f06d1c"
+      }
+    }
+  }
+}

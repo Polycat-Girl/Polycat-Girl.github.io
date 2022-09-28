@@ -4,7 +4,7 @@
       "method": "mint(address,uint256,uint256,bytes)",
       "args": {
         "price": "5000000000000000000",
-        "proof": "0x59d8b904a2b16554be100a0b76f38271703f406fc11f0a0fd8ec6d9599c3bdf00192bce6816ef686b5fb0baa743430a0289fb7323ccb671f42f33359514ebe291b"
+        "proof": "0x7c176ed2c6300451f8662a3a1d3e53c7fad24f670347a89bc2e913f6e8ef59d54c9aad6df0d4a92cda31f90c80da695f1d09c843595fd9ed1bda028735610f411b"
       }
     }
   }

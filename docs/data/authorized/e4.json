@@ -1,0 +1,11 @@
+{
+  "0x99fae815e49c752977016edd7c7c8c50551178b0": {
+    "whitelist": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "10000000000000000000",
+        "proof": "0x69d0140cda70e466494fdc4274d329fb5158799107fe67d1953b4f32038cb59f4beba176ea482b038221dfcba632e3da07b351619d1d4e70aff046c91479c5df1c"
+      }
+    }
+  }
+}

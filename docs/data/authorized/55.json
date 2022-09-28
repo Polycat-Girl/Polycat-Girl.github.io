@@ -1,0 +1,20 @@
+{
+  "0x0651019855371420ceae6a31cfe668eb653c9fb3": {
+    "genesis": {
+      "method": "mint(address,uint256,bytes)",
+      "args": {
+        "quantity": 1,
+        "proof": "0x4e23d0fe833b4ae33fac967d2052dfec0ee9227be070395c62ed39880f8786210a8c80fdd929db4c2a2046ec873b59b006428128a0562ec2327bf0a90f334fc71b"
+      }
+    }
+  },
+  "0x1d162f5c5567994835cd4c135babf4d0ec8d7f20": {
+    "genesis": {
+      "method": "mint(address,uint256,bytes)",
+      "args": {
+        "quantity": 1,
+        "proof": "0x758ff3c12b3dd2bf4bcf1cfe349885e105eba1ade20a5ef41ccccccbe788082d7ae1a8ca12aea3f7328ccd249fff84d05457459af38e443726e4b6f6f7460c8a1b"
+      }
+    }
+  }
+}

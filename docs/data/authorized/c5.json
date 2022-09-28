@@ -3,22 +3,22 @@
     "genesis": {
       "method": "mint(address,uint256,bytes)",
       "args": {
-        "quantity": 1,
-        "proof": "0x1913a578603172a1e63f425b6c9d623be341b2780cf5896285154dd23f2c7caa7eb5e1fa75fc9872bdf3f1e40fa558a35ae476d8c0d10db395c19d9eb75f3ee21b"
+        "quantity": 3,
+        "proof": "0xc7512bcf57c5605211de722a31d796f1fd6359efa6968f9fc4a6874bb4dfdc2615bcdb9e406bc0aa5bd16f7b62d2a5cb78ae763847cd7bb333be916ff26fee051c"
       }
     },
     "stacked": {
       "method": "mint(address,uint256,uint256,bytes)",
       "args": {
-        "price": "5000000000000000000",
-        "proof": "0x4ce0ab1fd72093e58d9dbfe350a2a5cd8cf52dda74169788626c71a27e06c4dc4cb9a6c27387c593050ffbf1caeef2089f2d1c5d12f1b6d5a2bbbde23f7a85c61b"
+        "price": "1000000000000000000",
+        "proof": "0x26003f4a21ee0b559e8e15cd2e55c94d23c702641ebbd3ce101b7cdaacda177358690d78d31884d2ca73ffa2eb22de98def34480bc6a43aa4c45bb2732bd47e51b"
       }
     },
     "whitelist": {
       "method": "mint(address,uint256,uint256,bytes)",
       "args": {
-        "price": "10000000000000000000",
-        "proof": "0x58b5bdf44f27bab8f1cf177d7cd25b9817a8d3e1a01b09e98abfff935106c06a5e4691144b7255f33a24ae7d916b320f68c8be8845fc41199b2ffdea98b35be61b"
+        "price": "2000000000000000000",
+        "proof": "0xba330413bd095c94bdea70e58489c4a25609093b96b634908b5b131a08c5a4da0b90b425a29a6b8b53681fa6aa06990286e8feac4e7fb063fda46d987e02b7851b"
       }
     }
   }

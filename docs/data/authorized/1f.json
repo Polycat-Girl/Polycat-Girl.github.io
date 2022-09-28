@@ -1,0 +1,29 @@
+{
+  "0xb38abf2b1f0edbbe77cdd1dffe53447dd8675b03": {
+    "whitelist": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "10000000000000000000",
+        "proof": "0x17f09532169ac049ad363843c20ebc4fc3431ea42fc5bbcd7099afa2e46b97a179fa48c30260af52a69b86d49891cb4de4c29b26a6f3f429296d9f0a842501a51c"
+      }
+    }
+  },
+  "0x87e2489e1f2295d51bc859ec70bc25422b1bc24b": {
+    "whitelist": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "10000000000000000000",
+        "proof": "0xefff2e1fc89e742bbb71d4f215d0d917dfecdc7c0a166660bbf8ab68c55fcb0e07d4bb7b11b1e4d5e4adb313a62d452cc7d76cb30b121bc4ae44f4b07836cf8c1c"
+      }
+    }
+  },
+  "0x428ea60f1f74e9d7d3ee33391287ad02f1324294": {
+    "whitelist": {
+      "method": "mint(address,uint256,uint256,bytes)",
+      "args": {
+        "price": "10000000000000000000",
+        "proof": "0x9f4684bfe46e34d2690fe7086cf6fbc55bd654da6024d35f720e7199b53af8c116dc69b9e390249d6e232766ff38ebf8d6100183570ffd63aa473811ac0819d21b"
+      }
+    }
+  }
+}

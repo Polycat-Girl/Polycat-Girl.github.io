@@ -9,7 +9,7 @@
       "chain_scanner": "https://polygonscan.com/",
       "contracts": {
         "nft": {
-          "address": ""
+          "address": "0xd581cbaBE1e603838AD1D29cb4df31FdC24ebd2E"
         }
       }
     }

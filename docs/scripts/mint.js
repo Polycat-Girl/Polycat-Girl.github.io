@@ -6,13 +6,19 @@ window.addEventListener('web3sdk-ready', async () => {
     method: 'mint(uint256,uint256,bytes)',
     args: {
       price: '15000000000000000000',
+      //testnet
       proof: '0xdfed1e99851675ca414e6791eb585053b4093bf1'
         + '6bb89321c6f0f1e5fe4eeb3e64e1863438d81a103488e'
-        + '2aec571feaae6330086349fe1fcf617904e0a6eb1181c'
+        + '2aec571feaae6330086349fe1fcf617904e0a6eb1181c',
+      //mainnet
+      proof: '0x8ea22f93cf8bcd1fa87a3ad451e8139a0d6394ec'
+        + '4f72ebf4a4a788cd37c1f3a34e536b714b54196988382'
+        + 'fd624d6f91a01c6c02d85654b6ffe8f06fb0e1f3ad81c'
     }
   }
 
   const stages = [
+    //testnet
     //{
     //  start: 1664104537000, //Sep 25 00:00:00
     //  end: 1664380800000, //Sep 25 23:59:59

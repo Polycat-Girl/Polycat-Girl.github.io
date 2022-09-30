@@ -309,6 +309,14 @@ window.addEventListener('web3sdk-ready', async () => {
     const amount = document.querySelector('input.amount')
     const args = []
     let value = 0
+
+    //check if they minted already
+    if (mode.method === 'mint(address,uint256,bytes)') {
+      if (await nft.read().balanceOf(Web3.state.account)) {
+        return notify('error', 'You have already minted')
+      }
+    }
+
     switch (mode.method) {
       //recipient, quantity, proof (free)
       case 'mint(address,uint256,bytes)':

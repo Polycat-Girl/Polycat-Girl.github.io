@@ -73,7 +73,7 @@ window.addEventListener('web3sdk-ready', async () => {
   }
 
   const setAuthorized = async _ => {
-    Web3SDK.state.authorized = { public: publicData }
+    Web3SDK.state.authorized = {};//{ public: publicData }
     try {
       //get authorized chunk
       const key = Web3SDK.state.account.substring(10, 12).toLowerCase()

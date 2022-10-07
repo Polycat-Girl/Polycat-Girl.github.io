@@ -65,10 +65,34 @@
           >Connect to Polygon</a>
         </div>
         <div class="connected hide">
-          <h3>Minting is over. </h3>
-          <h2 class="text-primary">!NYAA~</h2>
-          <div class="tabs hide"></div>
-          <div class="content hide"></div>
+          <div class="content">
+            <div class="form">
+              <a 
+                class="btn btn-solid btn-large btn-primary btn-mint"
+                href="javascript:void(0)" 
+                data-do="mint" 
+                data-on="click"
+              >Mint (15 MATIC)</a>
+      
+              <h4 class="text-secondary">Quantity</h4>
+      
+              <div class="form-row">
+                <button 
+                  type="button" 
+                  class="btn btn-solid btn-primary" 
+                  data-do="decrease-amount" 
+                  data-on="click"
+                >-</button>
+                <input class="amount" type="text" value="1" readonly />
+                <button 
+                  type="button" 
+                  class="btn btn-solid btn-primary" 
+                  data-do="increase-amount" 
+                  data-on="click"
+                >+</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -96,136 +120,6 @@
         All Rights Reserved by Polycat Girl
       </div>
     </footer>
-    <template id="template-tab">
-      <a 
-        class="btn btn-solid btn-{COLOR}"
-        data-do="tab"
-        data-on="click"
-        data-mode="{MODE}"
-        href="javascript:void(0)" 
-      >{LABEL} Mint</a>
-    </template>
-    <template id="template-countdown">
-      <div 
-        class="countdown" 
-        data-do="countdown"
-        data-date="{DATE}" 
-        data-zone="user_timezone" 
-        data-user_timezone="Asia/Manila" 
-        data-account_timezone="Asia/Hong_Kong"
-      > 
-        <div class="countdown-item"> 
-          <span class="days">00</span> 
-          <small>Days</small> 
-        </div> 
-        <div class="countdown-item"> 
-          <span class="hours">00</span> 
-          <small>Hours</small> 
-        </div> 
-        <div class="countdown-item"> 
-          <span class="minutes">00</span> 
-          <small>Mins</small> 
-        </div> 
-        <div class="countdown-item"> 
-          <span class="seconds">00</span> 
-          <small>Secs</small> 
-        </div> 
-      </div>
-    </template>
-    <template id="template-mint-genesis">
-      <div class="form">
-        <a 
-          class="btn btn-solid btn-large btn-primary btn-mint"
-          href="javascript:void(0)" 
-          data-do="mint" 
-          data-on="click"
-        >Mint</a>
-      </div>
-    </template>
-    <template id="template-mint-stacked">
-      <div class="form">
-        <a 
-          class="btn btn-solid btn-large btn-primary btn-mint"
-          href="javascript:void(0)" 
-          data-do="mint" 
-          data-on="click"
-        >Mint (5 MATIC)</a>
-
-        <h4 class="text-secondary">Quantity</h4>
-
-        <div class="form-row">
-          <button 
-            type="button" 
-            class="btn btn-solid btn-primary" 
-            data-do="decrease-amount" 
-            data-on="click"
-          >-</button>
-          <input class="amount" type="text" value="1" readonly />
-          <button 
-            type="button" 
-            class="btn btn-solid btn-primary" 
-            data-do="increase-amount" 
-            data-on="click"
-          >+</button>
-        </div>
-      </div>
-    </template>
-    <template id="template-mint-whitelist">
-      <div class="form">
-        <a 
-          class="btn btn-solid btn-large btn-primary btn-mint"
-          href="javascript:void(0)" 
-          data-do="mint" 
-          data-on="click"
-        >Mint (10 MATIC)</a>
-
-        <h4 class="text-secondary">Quantity</h4>
-
-        <div class="form-row">
-          <button 
-            type="button" 
-            class="btn btn-solid btn-primary" 
-            data-do="decrease-amount" 
-            data-on="click"
-          >-</button>
-          <input class="amount" type="text" value="1" readonly />
-          <button 
-            type="button" 
-            class="btn btn-solid btn-primary" 
-            data-do="increase-amount" 
-            data-on="click"
-          >+</button>
-        </div>
-      </div>
-    </template>
-    <template id="template-mint-public">
-      <div class="form">
-        <a 
-          class="btn btn-solid btn-large btn-primary btn-mint"
-          href="javascript:void(0)" 
-          data-do="mint" 
-          data-on="click"
-        >Mint (15 MATIC)</a>
-
-        <h4 class="text-secondary">Quantity</h4>
-
-        <div class="form-row">
-          <button 
-            type="button" 
-            class="btn btn-solid btn-primary" 
-            data-do="decrease-amount" 
-            data-on="click"
-          >-</button>
-          <input class="amount" type="text" value="1" readonly />
-          <button 
-            type="button" 
-            class="btn btn-solid btn-primary" 
-            data-do="increase-amount" 
-            data-on="click"
-          >+</button>
-        </div>
-      </div>
-    </template>
     <script id="network" data-value="mainnet"></script>
     <script type="text/javascript" src="/scripts/lib/doon.js"></script>
     <script type="text/javascript" src="/scripts/lib/theme.js"></script>
@@ -235,7 +129,7 @@
     <script type="text/javascript" src="/scripts/lib/walletconnect.js"></script>
     <script type="text/javascript" src="/scripts/lib/fortmatic.js"></script>
     <script type="text/javascript" src="/scripts/lib/notify.js"></script>
-    <script type="text/javascript" src="/scripts/mint.js?v4"></script>
+    <script type="text/javascript" src="/scripts/mint.js?v5"></script>
     <script type="text/javascript" src="/scripts/connect.js?v1"></script>
   </body>
 </html>
